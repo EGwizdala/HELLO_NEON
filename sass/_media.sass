@@ -1,0 +1,249 @@
+
+@media (max-width: 1024px )
+    header
+        +flex-style-parent(column, center, center, no-wrap)
+        aside
+            width: 100%
+
+            ul
+                +flex-style-parent(row, center, flex-start, wrap)
+                width: 100%
+                li
+                    margin: 20px 20px
+                    z-index: 2
+
+        hgroup
+            width: 100%
+            flex-grow: 0
+
+    main
+        div
+            div
+                margin: 0 0 0 50px
+                position: relative
+                img
+                    height: 500px
+                    position: absolute
+                    bottom: 120px
+                    top: auto
+
+@media (max-width: 768px )
+    header
+        aside
+            position: fixed
+            top: 0
+            left: 0
+            z-index: 3
+            background-color: #ffffff
+        aside ul li:last-child
+            display: inline-block
+
+        hgroup
+            width: 100%
+            flex-grow: 0
+            h1
+                height: 380px
+                line-height: 380px
+                font-size: 380px
+
+                &::before
+                    font-size: 80px
+                    top: 60%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+            nav
+                display: none
+                ul li
+                    opacity: 1
+                    animation: none
+
+    main
+        div
+            width: 100%
+            height: auto
+            +flex-style-parent(row, center, center, wrap)
+            h2
+                flex-basis: 100%
+                width: 100%
+                flex-grow: 1
+                text-align: left
+                margin-left: $medium-side-margin
+            p
+                flex-basis: 100%
+                text-align: justify
+                margin: 0 $medium-side-margin
+            div
+                flex-basis: 100%
+                height: 600px
+                margin: 0
+                position: relative
+                img
+                    height: 500px
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translate(-50%, -50%)
+    .gallery
+        width: 100%
+        +flex-style-parent(row, center, space-beetween, wrap)
+
+        h2
+            margin: 0 $medium-side-margin
+            flex-basis: 100%
+        p
+            margin: 25px $medium-side-margin 0
+            flex-basis: 100%
+            font-size: $par-font-size
+    .baner
+        +flex-style-parent(row, flex-end, flex-start, wrap)
+        div
+            width: 70%
+            margin-bottom: $medium-side-margin
+            margin-left: $medium-side-margin
+
+    article
+
+        .wrapper
+            width: 100%
+
+            h2
+                margin-left: $medium-side-margin
+            ul
+                flex-basis: 100%
+                width: 35%
+                margin: 0 $medium-side-margin
+                li
+                    flex-basis: calc(50% - 25px)
+                    height: 40px
+
+            div.text
+                padding-left: 0
+                margin: 0 $medium-side-margin
+
+                p
+
+                    padding-bottom: 2%
+
+                .img
+                    width: 35%
+                    margin-right: 0
+                p:last-child
+                    width: 60%
+
+            form
+                flex-basis: 35%
+                margin: $medium-side-margin
+
+                ul
+                    width: 100%
+                    margin: 0
+                li
+                    width: 100%
+            form ul li
+                label
+                    width: 25%
+
+                input, input:focus, input:active
+                    width: 60%
+
+            form ul li::after
+                bottom: -10px
+                width: 100%
+            .button
+                width: 100%
+                button
+                    width: 100%
+
+        div.last
+            padding-left: 0px
+            flex-basis: calc(60% - 50px)
+
+            h4
+                font-size: 25px
+                height: 70px
+                line-height: 70px
+            p
+                width: 100%
+                font-size: $par-font-size
+                text-align: justify
+
+@media (max-width: 599px)
+    h2
+        word-spacing: 5px
+        line-height: 0.6
+    header
+        hgroup
+            h1
+                height: 200px
+                line-height: 200px
+                font-size: 200px
+
+                &::before
+                    height: 160px
+                    line-height: 160px
+                    font-size: 60px
+                    top: 20%
+                    left: 50%
+
+    main
+        div
+            h2
+                line-height: 1.2
+                height: 120px
+                padding-left: $medium-side-margin
+                img
+                    width: 100%
+                    height: auto
+    .gallery
+        h2
+            padding-left: $medium-side-margin
+
+    .baner
+        +flex-style-parent(row, flex-end, flex-start, wrap)
+        div
+            width: 90%
+            font-size: 1.1em
+            line-height: 1.5
+            font-weight: bolder
+            div
+                margin-left: 0
+
+    article
+        .wrapper
+            width: 100%
+            margin: 0 $medium-side-margin
+            h2
+                margin-left: 0
+            ul
+                +flex-style-parent(column, flex-start, center, wrap)
+                li
+                    width: 50%
+            div.text
+                padding-left: 0
+                margin: 0
+                p
+                    padding-top: 5%
+                    padding-bottom: 5%
+
+                .img
+                    width: 100%
+                    margin-right: 0
+                    float: none
+                    img
+                        width: 100%
+                p:last-child
+                    width: 100%
+                    float: none
+            form
+                flex-basis: 100%
+                margin: $medium-side-margin
+
+                ul
+                    width: 100%
+
+                li
+                    width: 100%
+
+        div.last
+            margin-top: 10%
+            flex-basis: 100%

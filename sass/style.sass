@@ -1,0 +1,354 @@
+@import _var
+@import _mixins
+@import _keyframes
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: $gogle-font
+
+body
+    +flex-style-parent(column, center, center, no-wrap)
+    margin: auto
+
+li
+    +reset-li
+
+h2
+    +h2-style()
+
+header
+    +flex-style-parent(row, center, center, no-wrap)
+    max-width: 1600px
+    width: 100%
+    height: 90vh
+    min-height: 500px
+    aside
+        ul
+            +flex-style-parent(column, center, center, no-wrap)
+            width: 60px
+            z-index: 6
+
+            li
+                margin: 10px 0
+                width: 35px
+                height: 35px
+                cursor: pointer
+                transition: 0.25s linear
+
+                &:hover
+                    opacity: 0.5
+            li:last-child
+                display: none
+                flex-grow: 1
+                position: relative
+                .burgerWrapper
+                    position: fixed
+                    right: 5px
+                    top: 35px
+                    transform: translate(-50%, -50%)
+
+                    width: 40px
+                    height: 40px
+                .burgerA,  .burgerB
+                    position: absolute
+                    top: 17.5px
+                    // transform: translate(50%, -50%)
+                    width: 22px
+                    height: 5px
+                    border-radius: 2px
+                    background-color: #a569ea
+                    box-shadow: 0 15px 0 $base-color, 0 -15px 0 $base-color
+                    transition: 0.2s linear
+                .burgerA
+                    left: 0
+                .burgerB
+                    left: 20px
+                .rotateA
+                    +rotate-burger(45deg)
+                .rotateB
+                    +rotate-burger(-45deg)
+
+    hgroup
+        height: 90vh
+
+        flex-grow: 1
+        +background-img(url(../assets/herobanner.jpg))
+        +flex-style-parent(column, center, center, wrap )
+        z-index: 1
+
+        h1
+            margin: 0
+            padding: 0
+            height: 350px
+            line-height: 250px
+            font-size: 500px
+            font-weight: lighter
+            position: relative
+            font-family: 'Times New Roman', Times, serif
+            z-index: -2
+            color: $white-color
+            animation: opacity 3s linear, letterSpacing 3s linear both
+
+            &::before
+                margin: 0
+                padding: 0
+                width: 100%
+                text-align: center
+                content: "the time is"
+                font-size: 90px
+                font-family: $gogle-font
+                color: $base-color
+                font-weight: bold
+                letter-spacing: 10px
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                animation: letterSpacing 5s linear
+
+        nav
+            z-index: 2
+            ul
+                +flex-style-parent(row, center, space-around, no-wrap)
+                flex-basis: 300px
+
+                li
+                    opacity: 0
+                    animation: opacity 2s linear 3s both
+                    font-weight: bolder
+                    font-size: 25px
+
+                    a
+                        display: block
+                        color: $white-color
+                        text-decoration: none
+                        cursor: pointer
+                        padding: 0 20px
+                        transition: 0.25s linear
+                        &:hover
+                            color: $hover-color
+                            text-decoration: underline
+.sideNavHidden
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-end
+    width: 40vw
+    height: 100vh
+    position: fixed
+    top: -100vh
+    right: 0
+    background-color: rgba(111, 65, 202, 0.9)
+    z-index: 5
+    transition: 0.3s linear
+
+.sideNavVisible
+    top: 75px
+
+.topNavHidden
+    background-color: #fff
+    top: 0
+    left: 0
+    width: 100%
+    height: 75px
+    position: fixed
+    transition: 0.3s linear
+    z-index: 500
+    justify-content: flex-end
+
+.topNavVisible
+    top: 0
+    color: $base-color
+
+.positionFixed
+    position: fixed
+
+main
+    width: 100%
+    margin: 5vh 0
+    +flex-style-parent(row, center, center, no-wrap)
+    background-color: #c0bec0
+
+    div
+        width: $inner-width
+        height: 800px
+        +flex-style-parent(column, center, center, wrap)
+        align-content: center
+
+        h2
+            flex-basis: 100px
+            line-height: 100px
+            width: 430px
+            text-align: left
+            margin-left: -1000px
+
+        p
+            width: 430px
+            padding: 10px 0
+            font-size: $par-font-size
+            +p-style
+
+        div
+            margin: 0 0 0 100px
+            width: 400px
+            +flex-style-parent(row, center, center, wrap)
+
+            img
+                display: block
+                height: 600px
+
+.move
+    +animation-move
+
+.animateOpacity
+    opacity: 0
+
+.opacity
+    +animation-opacity(0.5s)
+
+.gallery
+    width: $inner-width
+    +flex-style-parent(row, center, space-beetween, wrap)
+
+    h2
+        flex-basis: 200px
+    p
+        flex-basis: 200px
+        flex-grow: 1
+        font-size: $par-font-size
+
+.baner
+    margin-top: 5vh
+    width: 100%
+    height: 40vh
+    min-height: 250px
+    background-color: blue
+    +flex-style-parent(row, flex-end, center, wrap)
+    +background-img(url(../assets/panel.jpg))
+
+    div
+        width: $inner-width
+        color: $white-color
+        font-size: 1.2em
+        letter-spacing: 2px
+        word-spacing: 5px
+        margin-bottom: 1%
+
+article
+    width: 100%
+    height: auto
+    padding-bottom: 25px
+    +flex-style-parent(row, center, center, no-wrap)
+    background-image: linear-gradient(#e0cffe,#7d40fe)
+
+    .wrapper
+        width: $inner-width
+        +flex-style-parent(row, strech, space-between, wrap)
+        align-content: space-around
+        color: $white-color
+
+        h2
+            flex-basis: 100%
+            padding-top: 5%
+            padding-bottom: 2%
+        ul
+            flex-basis: $left-side-width
+            width: $left-side-width
+            font-size: 20px
+            line-height: 70px
+            text-transform: uppercase
+            +flex-style-parent(column, strech, flex-start, wrap)
+            li
+                transition: 0.25s linear
+
+        ul.servicesList li:hover
+            color: $hover-color
+            text-shadow: 0 0 10px #FFFFFF
+            cursor: pointer
+        div.text
+            flex-basis: 100px
+            flex-grow: 1
+            font-weight: lighter
+            text-align: justify
+            padding-left: 40px
+            font-size: $par-font-size
+            p
+                padding-bottom: 2%
+                display: inline-block
+            .img
+                width: 250px
+                margin-right: 20px
+                float: left
+            p:last-child
+                width: 327px
+                float: right
+
+        &::after
+            content: ""
+            clear: both
+        form ul li
+            text-transform: lowercase
+            position: relative
+
+            label
+                display: inline-block
+                font-size: 14px
+                width: 60px
+                height: 30px
+                line-height: 30px
+                padding-left: 10px
+            input, input:focus, input:active
+                border: none
+                background-image: none
+                background-color: transparent
+                box-shadow: none
+                outline: none
+                font-size: 20px
+                color: $white-color
+                width: 190px
+                height: 30px
+        form ul li::after
+            content: ""
+            width: $left-side-width
+            height: 2px
+            background-color: $white-color
+            position: absolute
+            bottom: 10px
+            left: 0px
+        .button
+            padding-top: 25px
+            &::after
+                content: ""
+                width: 0
+                height: 0
+            button
+                width: 100%
+                height: 45px
+                border-radius: 30px
+                outline: none
+                border: none
+                background-color: $white-color
+                color: $base-color
+                text-transform: uppercase
+                font-weight: bold
+                letter-spacing: 2px
+                &:focus
+                    background-color: #7d40fe
+                    border: 2px solid white
+                    color: $white-color
+                    cursor: pointer
+    div.last
+        padding-left: 40px
+
+        h4
+            font-size: 25px
+            height: 70px
+            line-height: 70px
+        p
+            width: 600px
+            font-size: $par-font-size
+            text-align: justify
+
+// zrób gradnient animation!!
+@import _media

@@ -1,0 +1,52 @@
+=reset-li
+    margin: 0
+    padding: 0
+    list-style: none
+    text-decoration: none
+
+=h2-style()
+    font-family: $gogle-font
+    font-size: 2.5em
+    color: $base-color
+    letter-spacing: 2px
+    word-spacing: 10px
+
+=p-style()
+    font-family: $gogle-font
+    font-size: 1em
+    color: $p-color
+    line-height: 1.5
+    text-align: justify
+
+=flex-style-parent($direction, $align-direction, $justify-direction, $wrap-type )
+    display: flex
+    flex-direction: $direction
+    align-items: $align-direction
+    justify-content: $justify-direction
+    flex-wrap: $wrap-type
+    animation: opacity 01s linear
+
+=flex-style-child( $amount, $value, $order, $align-self-direction)
+    flex-grow: $amount
+    flex-basis: $value
+    order: $order
+    align-self: $align-self-direction
+
+=background-img( $url)
+    background-image: $url
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    background-attachment: fixed
+
+=rotate-burger($angle)
+    box-shadow: 0 0px 0 $base-color, 0 0px 0 $base-color
+    transform: rotate($angle)
+    transform-origin: center
+    width: 30px
+
+=animation-move()
+    animation: move 1s linear both
+
+=animation-opacity($delay)
+    animation: opacity 2s linear $delay both

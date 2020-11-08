@@ -64,9 +64,7 @@ function showTopNav( scrollPosition) {
         navLinkElem.forEach((element) => {
             element.style.color = "#5729b0"
         })
-        
         social.style.position = "fixed";
-       
         addHiddenNav("topNavVisible");
         
     }
@@ -78,7 +76,6 @@ function showTopNav( scrollPosition) {
     }}
 
 }
-
 
 // animation effects
 

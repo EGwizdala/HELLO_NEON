@@ -49,10 +49,11 @@ burgerWrapper.addEventListener("click", burgerChanger);
 
 const header = document.querySelector("header");
 const  navLinkElem = document.querySelectorAll(".link");
-const social = document.querySelector("aside ul")
+const social = document.querySelector("aside ul");
+const aside = document.querySelector("aside");
 
 function getScrollPosition() {
-    return window.scrollY
+    return window.scrollY;
 };
 
 
@@ -62,17 +63,18 @@ function showTopNav( scrollPosition) {
     if ( scrollPosition > header.offsetHeight ) {
         navigationUl.classList.add("topNavHidden");
         navLinkElem.forEach((element) => {
-            element.style.color = "#5729b0"
+            element.style.color = "#5729b0";
         })
-        social.style.position = "fixed";
+     
+
         addHiddenNav("topNavVisible");
         
     }
 
-    else {
+    else if (window.innerWidth < 1024){
         navigationUl.classList.remove("topNavHidden");
         navigationUl.classList.remove("topNavVisible");
-        social.style.position = "relative";
+     
     }}
 
 }

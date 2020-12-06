@@ -172,6 +172,8 @@ header aside ul {
           animation: opacity 01s linear;
   width: 60px;
   z-index: 6;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 header aside ul li {
@@ -407,19 +409,8 @@ header hgroup nav ul li a:hover {
 
 .positionFixed {
   position: fixed;
-}
-
-.asideTopNav {
-  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 75px;
-  background-color: #ffffff;
-  z-index: 5;
-}
-
-.socialTopNav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -430,15 +421,15 @@ header hgroup nav ul li a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
   -webkit-animation: opacity 01s linear;
           animation: opacity 01s linear;
-  width: 100%;
-  z-index: 5;
+  width: 250px;
+  height: 75px;
+  z-index: 3;
 }
 
 main {
@@ -830,5 +821,414 @@ article div.last p {
   width: 600px;
   font-size: 16px;
   text-align: justify;
+}
+
+@media (max-width: 1024px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: no-wrap;
+        flex-wrap: no-wrap;
+    -webkit-animation: opacity 01s linear;
+            animation: opacity 01s linear;
+  }
+  header aside {
+    width: 100%;
+  }
+  header aside ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-animation: opacity 01s linear;
+            animation: opacity 01s linear;
+    width: 100%;
+  }
+  header aside ul li {
+    margin: 20px 20px;
+    z-index: 2;
+  }
+  header hgroup {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
+  main div div {
+    margin: 0 0 0 50px;
+    position: relative;
+  }
+  main div div img {
+    height: 500px;
+    position: absolute;
+    bottom: 120px;
+    top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #ffffff;
+  }
+  header aside ul li:last-child {
+    display: inline-block;
+  }
+  header hgroup {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
+  header hgroup h1 {
+    height: 380px;
+    line-height: 380px;
+    font-size: 380px;
+  }
+  header hgroup h1::before {
+    font-size: 80px;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  header hgroup nav {
+    display: none;
+  }
+  header hgroup nav ul li {
+    opacity: 1;
+    -webkit-animation: none;
+            animation: none;
+  }
+  main div {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-animation: opacity 01s linear;
+            animation: opacity 01s linear;
+  }
+  main div h2 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: left;
+    margin-left: 25px;
+  }
+  main div p {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    text-align: justify;
+    margin: 0 25px;
+  }
+  main div div {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    height: 600px;
+    margin: 0;
+    position: relative;
+  }
+  main div div img {
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .gallery {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-beetween;
+        -ms-flex-pack: space-beetween;
+            justify-content: space-beetween;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-animation: opacity 01s linear;
+            animation: opacity 01s linear;
+  }
+  .gallery h2 {
+    margin: 0 25px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .gallery p {
+    margin: 25px 25px 0;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    font-size: 16px;
+  }
+  .baner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-animation: opacity 01s linear;
+            animation: opacity 01s linear;
+  }
+  .baner div {
+    width: 70%;
+    margin-bottom: 25px;
+    margin-left: 25px;
+  }
+  article .wrapper {
+    width: 100%;
+  }
+  article .wrapper h2 {
+    margin-left: 25px;
+  }
+  article .wrapper ul {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    width: 35%;
+    margin: 0 25px;
+  }
+  article .wrapper ul li {
+    -ms-flex-preferred-size: calc(50% - 25px);
+        flex-basis: calc(50% - 25px);
+    height: 40px;
+  }
+  article .wrapper div.text {
+    padding-left: 0;
+    margin: 0 25px;
+  }
+  article .wrapper div.text p {
+    padding-bottom: 2%;
+  }
+  article .wrapper div.text .img {
+    width: 35%;
+    margin-right: 0;
+  }
+  article .wrapper div.text p:last-child {
+    width: 60%;
+  }
+  article .wrapper form {
+    -ms-flex-preferred-size: 35%;
+        flex-basis: 35%;
+    margin: 25px;
+  }
+  article .wrapper form ul {
+    width: 100%;
+    margin: 0;
+  }
+  article .wrapper form li {
+    width: 100%;
+  }
+  article .wrapper form ul li label {
+    width: 25%;
+  }
+  article .wrapper form ul li input, article .wrapper form ul li input:focus, article .wrapper form ul li input:active {
+    width: 60%;
+  }
+  article .wrapper form ul li::after {
+    bottom: -10px;
+    width: 100%;
+  }
+  article .wrapper .button {
+    width: 100%;
+  }
+  article .wrapper .button button {
+    width: 100%;
+  }
+  article div.last {
+    padding-left: 0px;
+    -ms-flex-preferred-size: calc(60% - 50px);
+        flex-basis: calc(60% - 50px);
+  }
+  article div.last h4 {
+    font-size: 25px;
+    height: 70px;
+    line-height: 70px;
+  }
+  article div.last p {
+    width: 100%;
+    font-size: 16px;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 599px) {
+  h2 {
+    word-spacing: 5px;
+    line-height: 0.6;
+  }
+  header hgroup h1 {
+    height: 200px;
+    line-height: 200px;
+    font-size: 200px;
+  }
+  header hgroup h1::before {
+    height: 160px;
+    line-height: 160px;
+    font-size: 60px;
+    top: 20%;
+    left: 50%;
+  }
+  main div h2 {
+    line-height: 1.2;
+    height: 120px;
+    padding-left: 25px;
+  }
+  main div h2 img {
+    width: 100%;
+    height: auto;
+  }
+  .gallery h2 {
+    padding-left: 25px;
+  }
+  .baner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-animation: opacity 01s linear;
+            animation: opacity 01s linear;
+  }
+  .baner div {
+    width: 90%;
+    font-size: 1.1em;
+    line-height: 1.5;
+    font-weight: bolder;
+  }
+  .baner div div {
+    margin-left: 0;
+  }
+  article .wrapper {
+    width: 100%;
+    margin: 0 25px;
+  }
+  article .wrapper h2 {
+    margin-left: 0;
+  }
+  article .wrapper ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-animation: opacity 01s linear;
+            animation: opacity 01s linear;
+  }
+  article .wrapper ul li {
+    width: 50%;
+  }
+  article .wrapper div.text {
+    padding-left: 0;
+    margin: 0;
+  }
+  article .wrapper div.text p {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  article .wrapper div.text .img {
+    width: 100%;
+    margin-right: 0;
+    float: none;
+  }
+  article .wrapper div.text .img img {
+    width: 100%;
+  }
+  article .wrapper div.text p:last-child {
+    width: 100%;
+    float: none;
+  }
+  article .wrapper form {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin: 25px;
+  }
+  article .wrapper form ul {
+    width: 100%;
+  }
+  article .wrapper form li {
+    width: 100%;
+  }
+  article div.last {
+    margin-top: 10%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

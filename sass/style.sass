@@ -29,6 +29,7 @@ header
             +flex-style-parent(column, center, center, no-wrap)
             width: 60px
             z-index: 6
+            transition: 0.3s linear
 
             li
                 margin: 10px 0
@@ -163,24 +164,12 @@ header
 
 .positionFixed
     position: fixed
-
-.asideTopNav
-    position: fixed
     top: 0
     left: 0
-    width: 100%
+    +flex-style-parent(row, center, space-around , no-wrap)
+    width: 250px
     height: 75px
-    background-color: #ffffff
-    z-index: 5
-.socialTopNav
-    +flex-style-parent(row, center, flex-start, wrap)
-    width: 100%
-
-    z-index: 5
-
-    // li
-    //     margin: 20px 20px
-    //     z-index: 2
+    z-index: 3
 
 main
     width: 100%
@@ -367,3 +356,5 @@ article
             width: 600px
             font-size: $par-font-size
             text-align: justify
+
+@import _media

@@ -19,8 +19,8 @@ Page was written to practise keyframes, media queries, sass preprocessor and jav
 
 ## Technologies
 * HTML5
-* SASS/CSS5
-* Java Script
+* SASS/CSS (media query, keyframes, mixins, variables in use)
+* JAVA SCRIPT
 * Written in Visual Studio Code
 
 ## Setup

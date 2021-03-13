@@ -1,7 +1,3 @@
-# A free to code layout made in JS, HTML5 and SASS. 
-
-## Website is responsive (mobile, tablet, screen) and animated. Layout by the https://theawwwesomes.org.
-
 # HELLO NEON
 An animated, fully responsive demo landing page of a creative-studio. 
 
